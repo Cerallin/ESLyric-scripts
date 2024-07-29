@@ -148,9 +148,10 @@ function parseLyricResponse(item, man, body) {
             let version = lyricObj['lrc']['version'] || 0;
             if (version == 1) return;
         }
-        if (lyricObj['tlyric']) {
-            lyricText += lyricObj['tlyric']['lyric'] || '';
-        }
+        // Drop translations
+        // if (lyricObj['tlyric']) {
+        //     lyricText += lyricObj['tlyric']['lyric'] || '';
+        // }
 
         let meta = man.createLyric();
         meta.title = item.title;
